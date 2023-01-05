@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 def print_last_digit(number):
-    return number - ((number // 10) * 10)
+    return abs(number) - ((abs(number) // 10) * 10)
