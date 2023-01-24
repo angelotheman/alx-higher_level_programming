@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""
+This is a raw Square with a skeleton
+"""
 class Square:
-    """This is just a raw skeleton of the Square class with no attributes"""
     pass
