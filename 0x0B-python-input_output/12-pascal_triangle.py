@@ -1,22 +1,22 @@
 #!/usr/bin/python3
-class Student:
-    def __init__(self, first_name, last_name, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+# 14-pascal_triangle.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines a Pascal's Triangle function."""
 
-    def to_json(self, attrs=None):
-        class_d = self.__dict__
-        sel_d = dict()
 
-        if type(attrs) is list:
-            for attr in attrs:
-                if type(attr) is not str:
-                    return class_d
+def pascal_triangle(n):
+    """Represent Pascal's Triangle of size n.
+    Returns a list of lists of integers representing the triangle.
+    """
+    if n <= 0:
+        return []
 
-                if attr in class_d:
-                    sel_d[attr] = class_d[attr]
-
-            return sel_d
-
-        return class_d
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
