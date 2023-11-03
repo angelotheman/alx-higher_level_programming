@@ -25,4 +25,4 @@ if __name__ == '__main__':
     elif op == '*':
         print(result.format(a, op, b, calc.mul(a, b)))
     else:
-        print(result.format(a, op, "/", calc.div(a, b)))
+        print(result.format(a, '/', b, calc.div(a, b)))
