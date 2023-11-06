@@ -11,7 +11,6 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
 	int nodeCount, i, j;
-	int arr[];
 
 	temp = *head;
 	nodeCount = 0;
@@ -22,7 +21,7 @@ int is_palindrome(listint_t **head)
 		temp = temp->next;
 	}
 
-	arr[nodeCount];
+	int arr[nodeCount];
 
 	temp = *head;
 
