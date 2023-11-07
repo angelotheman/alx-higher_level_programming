@@ -10,6 +10,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
+	int arr[];
 	int nodeCount, i, j;
 
 	temp = *head;
