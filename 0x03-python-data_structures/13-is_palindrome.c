@@ -1,6 +1,30 @@
 #include "lists.h"
 
 /**
+  * reverse - Reverses a linked list
+  * @head: the head of the list
+  *
+  * Return: The new head of list
+  */
+
+listint_t *reverse(listint_t *head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = head;
+	listint_t *next = NULL;
+
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	return (prev);
+}
+
+/**
   * is_palindrome - Checks if the linkedlist is palidrome
   * @head: The linked list to be checked
   *
@@ -9,34 +33,32 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp;
-	int arr[];
-	int nodeCount, i, j;
+	listint_t *slow, *fast, *second_half, *first_half;
 
-	temp = *head;
-	nodeCount = 0;
+	slow = *head;
+	fast = *head;
 
-	while (temp != NULL)
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	while (fast != NULL && fast->next != NULL)
 	{
-		nodeCount++;
-		temp = temp->next;
+		slow = slow->next;
+		fast = fast->next->next;
 	}
 
-	int arr[nodeCount];
+	second_half = reverse(slow);
+	first_half = *head;
 
-	temp = *head;
-
-	for (i = 0; i < nodeCount; i++)
+	while (second_half != NULL)
 	{
-		arr[i] = temp->n;
-		temp = temp->next;
-	}
-
-	for (i = 0, j = nodeCount - 1; i < j; i++, j--)
-	{
-		if (arr[i] != arr[j])
+		if (first_half->n != second_half->n)
 			return (0);
+
+		first_half = first_half->next;
+		second_half = second_half->next;
 	}
 
 	return (1);
+}
 }
