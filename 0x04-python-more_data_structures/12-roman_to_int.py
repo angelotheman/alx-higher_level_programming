@@ -15,12 +15,16 @@ def roman_to_int(roman_string):
     i = 0
     while i < len(roman_string):
         a = num_dict[roman_string[i]]
-        b = num_dict[roman_string[i + 1]]
-        if a < b:
-            total = total + (a - b)
-            i += 2
+        if i + 1 < len(roman_string):
+            b = num_dict[roman_string[i + 1]]
+            if a < b:
+                total = total + (a - b)
+                i += 2
+            else:
+                total = total + a
+                i += 1
         else:
             total = total + a
-            i++
+            i += 1
 
     return total
