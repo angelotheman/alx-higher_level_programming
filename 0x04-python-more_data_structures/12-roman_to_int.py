@@ -22,3 +22,5 @@ def roman_to_int(roman_string):
         else:
             total = total + a
             i++
+
+    return total
