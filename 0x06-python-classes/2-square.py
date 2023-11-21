@@ -15,7 +15,8 @@ class Square:
         """Initialize a new square.
 
         Args:
-            size (int): The size of the square.
+            size (int, optional): The size of the square,
+                    Defaults to 0
         """
         self.__size = size
         if not isinstance(size, int):
