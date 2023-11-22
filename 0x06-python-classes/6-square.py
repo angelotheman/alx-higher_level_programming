@@ -24,7 +24,7 @@ Class Square that defines a square by:
 class Square:
     """Represents a square"""
 
-    def __init__(self, size=0, position=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize a new square.
 
         Args:
