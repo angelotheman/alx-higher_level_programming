@@ -28,15 +28,15 @@ class Rectangle:
     @property
     def width(self)
     """Returns the width of the rectangle"""
-        return self.__width
+    return self.__width
 
     @width.setter
     def width(self, value)
-        """Set's the width of the rectangle
+    """Set's the width of the rectangle
 
-            Args:
-                Value: The value of the width
-        """
+    Args:
+        Value: The value of the width
+    """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
