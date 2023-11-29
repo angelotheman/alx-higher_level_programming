@@ -3,6 +3,7 @@
 Defines a locked class here
 """
 
+
 class LockedClass:
     """
     Prevent the user from instantiating new LockedClass attributes
