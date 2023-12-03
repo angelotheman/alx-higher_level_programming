@@ -32,8 +32,8 @@ class Rectangle:
                 width (optional, int): the width of rectangle
                 height (optional, int): the height of rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
         type(self).number_of_instances += 1
 
@@ -136,10 +136,5 @@ class Rectangle:
         Return:
         - Rectangle class
         """
-
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        elif size < 0:
-            raise ValueError("width must be >= 0")
 
         return cls(size, size)
