@@ -80,6 +80,8 @@ class Rectangle:
 
         message = ""
         for _ in range(self.__height):
-            message += "#" * self.__width + "\n"
+            message += "#" * self.__width
+            if _ != self.__height - 1:
+                message += "\n"
 
         return message
