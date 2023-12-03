@@ -14,9 +14,10 @@ def is_safe(board, row, col, N):
         if board[i] == col or \
            board[i] - i == col - row or \
            board[i] + i == col + row:
-               return False
+            return False
 
     return True
+
 
 def solve_nqueens(board, row, N):
     """Recursively solve the N-Queens problem"""
@@ -28,6 +29,7 @@ def solve_nqueens(board, row, N):
         if is_safe(board, row, col, N):
             board[row] = col
             solve_nqueens(board, row + 1, N)
+
 
 def nqueens(N):
     """Main function to solve the N-Queens problem"""
@@ -41,6 +43,7 @@ def nqueens(N):
 
     board = [-1] * N
     solve_nqueens(board, 0, N)
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
