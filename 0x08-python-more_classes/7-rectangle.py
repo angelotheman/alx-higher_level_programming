@@ -95,7 +95,9 @@ class Rectangle:
 
         message = ""
         for _ in range(self.__height):
-            message += Rectangle.print_symbol * self.__width + "\n"
+            message += Rectangle.print_symbol * self.__width
+            if _ != self.__height - 1:
+                message += "\n"
 
         return message
 
