@@ -33,13 +33,13 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     def __del__(self):
         """Destructor that prints message when instance is deleted"""
         print("Bye rectangle...")
 
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
 
     @property
     def width(self):
@@ -95,7 +95,7 @@ class Rectangle:
 
         message = ""
         for _ in range(self.__height):
-            message += Rectangle.print_symbol * self.__width
+            message += str(type(self).print_symbol) * self.__width
             if _ != self.__height - 1:
                 message += "\n"
 
