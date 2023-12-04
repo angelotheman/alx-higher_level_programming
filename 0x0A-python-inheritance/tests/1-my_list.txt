@@ -1,22 +1,52 @@
 # Tests for Python Inheritance
 
-# Test 1: Empty class
->>> empty_list = MyList()
->>> empty_list.print_sorted()
+# Test case #0: Order a disordered list of positive integers
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test case #1: Order a disordered list of positive integers
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(4)
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test case #2: Empty list
+>>> my_list = MyList()
+>>> my_list.print_sorted()
 []
 
-# Test 2: Unsorted numbers
->>> unsorted_list = MyList([5, 4, 3, 2, 1])
->>> unsorted_list.print_sorted()
-[1, 2, 3, 4, 5]
+# Test case #3: Do nothing
+>>> my_list = MyList()
+>>> my_list.append(-5)
+>>> my_list.append(-4)
+>>> my_list.append(-3)
+>>> my_list.append(-2)
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-5, -4, -3, -2, -1]
 
-# Test 3: Sorted numbers
->>> sorted_list = MyList([1, 2, 3, 4, 5])
->>> sorted_list.print_sorted()
-[1, 2, 3, 4, 5]
+# Test case #4: Order a disordered list of negative integers
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-4)
+>>> my_list.append(-2)
+>>> my_list.append(-3)
+>>> my_list.append(-5)
+>>> my_list.print_sorted()
+[-5, -4, -3, -2, -1]
 
-# Test 4: Mixed types
->>> mixed_list = MyList([1, 2, 'a', 'b', 4])
->>> mixed_list.print_sorted()
-Traceback (most recent call)
-TypeError: List contained non-integers
+# Test case #5: Invalid test case of tuples
+>>> my_list = (1, 2)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  AttributeError: 'tuple' object has no attribute 'print_sorted'
