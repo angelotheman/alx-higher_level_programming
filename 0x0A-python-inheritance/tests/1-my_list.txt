@@ -1,0 +1,22 @@
+# Tests for Python Inheritance
+
+# Test 1: Empty class
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+
+# Test 2: Unsorted numbers
+>>> unsorted_list = MyList([5, 4, 3, 2, 1])
+>>> unsorted_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test 3: Sorted numbers
+>>> sorted_list = MyList([1, 2, 3, 4, 5])
+>>> sorted_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test 4: Mixed types
+>>> mixed_list = MyList([1, 2, 'a', 'b', 4])
+>>> mixed_list.print_sorted()
+Traceback (most recent call)
+TypeError: List contained non-integers
