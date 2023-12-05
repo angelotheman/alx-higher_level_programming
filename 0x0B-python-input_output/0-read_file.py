@@ -9,4 +9,4 @@ def read_file(filename=""):
     """Reads file and prints to stdout"""
     with open(filename, "r", encoding="utf-8") as text:
         content = text.read()
-        print(content)
+        print(content, end='')
