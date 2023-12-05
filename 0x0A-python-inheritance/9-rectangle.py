@@ -3,7 +3,6 @@
 Module - 9
 init method: width and height
 method: def area()
-print: Print
 str: return str
 """
 
