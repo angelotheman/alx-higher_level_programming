@@ -9,3 +9,4 @@ def write_file(filename="", text=""):
     """Writes to a file"""
     with open(filename, "x", encoding="utf-8") as f:
         f.write(text)
+        return len(text)
