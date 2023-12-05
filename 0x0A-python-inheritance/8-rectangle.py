@@ -3,7 +3,10 @@
 Module - 8
 init method: width and height
 """
+
+
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 
 class Rectangle(BaseGeometry):
     """The Rectangle Class"""
