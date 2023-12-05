@@ -7,5 +7,5 @@ Module - 3
 
 def to_json_string(my_obj):
     """Returns JSON representation of object"""
-    data = json.dumps(my_obj)
+    data = json.dump(my_obj)
     return data
