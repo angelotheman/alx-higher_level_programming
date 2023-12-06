@@ -6,19 +6,20 @@ Module - 100
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Append if search string is found"""
-    with open(filename, "r+") as file:
-        while True:
-            position = file.tell()
+    """Append if search string is found
+    
+    Args:
+    - filename: Name of the file
+    - search_string: string to be searched
+    - new_string: The new string to append
+    """
+    text = ""
 
-            line = file.readline()
-
-            if not line:
-                break
-
+    with open(filename, "r") as file:
+        for line in file:
+            text += line
             if search_string in line:
-                file.seek(position + len(line))
+                text += new_string
 
-                file.write("{}\n".format(new_string))
-
-                break
+    with open(filename, "w") as file:
+        file.write(text)
