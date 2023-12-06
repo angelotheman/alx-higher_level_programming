@@ -7,7 +7,7 @@ Module - 100
 
 def append_after(filename="", search_string="", new_string=""):
     """Append if search string is found
-    
+
     Args:
     - filename: Name of the file
     - search_string: string to be searched
