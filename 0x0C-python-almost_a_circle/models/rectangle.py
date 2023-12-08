@@ -8,6 +8,7 @@
 - Public instance:
     - def Area(self): Area of rectangle
     - def display(self): Display area as # with x and y offsets
+    - def update(self, *args): Assigns argument to each attribute
 - __str__ method to display string version of class
 """
 
@@ -113,6 +114,13 @@ class Rectangle(Base):
 
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
+
+    def update(self, *args):
+        """Assigns args to values in order"""
+        attributes = ["id", "width", "height", "x", "y"]
+
+        for attribute, value in zip(attributes, args):
+            setattr(self, attribute, value
 
     def __str__(self):
         """Returns human readable object class"""
