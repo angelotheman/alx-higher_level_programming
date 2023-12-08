@@ -5,7 +5,9 @@
 - Getter/Setter for each
 - Initialization for each
 - Checks for validation of all attributes
-- Public instance: def Area()
+- Public instance:
+    - def Area(self): Area of rectangle
+    - def display(self): Display area as #
 """
 
 
@@ -100,3 +102,8 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle"""
         return self.__width * self.__height
+
+    def display(self):
+        """Returns the width and height in #"""
+        for _ in range(self.__height):
+            print("#" * self.__width)
