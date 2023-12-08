@@ -4,6 +4,8 @@
 - Private instance attributes: width, height, x, y
 - Getter/Setter for each
 - Initialization for each
+- Checks for validation of all attributes
+- Public instance: def Area()
 """
 
 
@@ -94,3 +96,7 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(y))
 
         self.__y = y
+
+    def area(self):
+        """Returns the area of the Rectangle"""
+        return self.__width * self.__height
