@@ -7,7 +7,7 @@
 - Checks for validation of all attributes
 - Public instance:
     - def Area(self): Area of rectangle
-    - def display(self): Display area as #
+    - def display(self): Display area as # with x and y offsets
 - __str__ method to display string version of class
 """
 
@@ -105,9 +105,14 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Returns the width and height in #"""
+        """Returns the width and height in #
+        It also considers the x and y coordinates
+        """
+        for _ in range(self.__y):
+            print()
+
         for _ in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """Returns human readable object class"""
