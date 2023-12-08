@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-Module - 2
-
-- Module inherits from 1
+- Module inherits from Base
 - Private instance attributes: width, height, x, y
 - Getter/Setter for each
 - Initialization for each
@@ -45,6 +43,11 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """Sets the width of the Rectangle"""
+        if not isinstance(width, int):
+            raise TypeError("{} must be an integer".format(width))
+        elif width <= 0:
+            raise ValueError("{} must be > 0".format(width))
+
         self.__width = width
 
     @property
@@ -55,6 +58,11 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """Sets the height of the Rectangle"""
+        if not isinstance(height, int):
+            raise TypeError("{} must be an integer".format(height))
+        elif height <= 0:
+            raise ValueError("{} must be > 0".format(height))
+
         self.__height = height
 
     @property
@@ -65,6 +73,11 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """Sets the x of the Rectangle"""
+        if not isinstance(x, int):
+            raise TypeError("{} must be an integer".format(x))
+        elif < 0:
+            raise ValueError("{} must be >= 0".format(x))
+
         self.__x = x
 
     @property
@@ -75,4 +88,9 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """Sets the y of the Rectangle"""
+        if not isinstance(y, int):
+            raise TypeError("{} must be an integer".format(y))
+        elif < 0:
+            raise ValueError("{} must be >= 0".format(y))
+
         self.__y = y
