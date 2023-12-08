@@ -8,12 +8,13 @@
 - Public instance:
     - def Area(self): Area of rectangle
     - def display(self): Display area as #
+- __str__ method to display string version of class
 """
 
 
 class Rectangle(Base):
     """Rectangle inherits from the Base class
-    
+
     Private instance attributes:
     - __width: Width of the rectangle
     - __height: Height of the rectangle
@@ -79,7 +80,7 @@ class Rectangle(Base):
         """Sets the x of the Rectangle"""
         if not isinstance(x, int):
             raise TypeError("{} must be an integer".format(x))
-        elif < 0:
+        elif x < 0:
             raise ValueError("{} must be >= 0".format(x))
 
         self.__x = x
@@ -94,7 +95,7 @@ class Rectangle(Base):
         """Sets the y of the Rectangle"""
         if not isinstance(y, int):
             raise TypeError("{} must be an integer".format(y))
-        elif < 0:
+        elif y < 0:
             raise ValueError("{} must be >= 0".format(y))
 
         self.__y = y
@@ -107,3 +108,8 @@ class Rectangle(Base):
         """Returns the width and height in #"""
         for _ in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """Returns human readable object class"""
+        return "[Rectangle] (self.id) self.__x/self.__y - \
+                self.__width/self.__height"
