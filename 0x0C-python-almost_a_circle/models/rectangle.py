@@ -115,12 +115,17 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns args to values in order"""
-        attributes = ["id", "width", "height", "x", "y"]
+        if args:
+            attributes = ["id", "width", "height", "x", "y"]
 
-        for attribute, value in zip(attributes, args):
-            setattr(self, attribute, value
+            for attribute, value in zip(attributes, args):
+                setattr(self, attribute, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
 
     def __str__(self):
         """Returns human readable object class"""
