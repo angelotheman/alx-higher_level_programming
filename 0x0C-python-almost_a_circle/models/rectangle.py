@@ -9,6 +9,7 @@
     - def Area(self): Area of rectangle
     - def display(self): Display area as # with x and y offsets
     - def update(self, *args): Assigns argument to each attribute
+    - def to_dictionary(self): Returns the dictionary represenation
 - __str__ method to display string version of class
 """
 
@@ -126,6 +127,15 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        """Returns dictionary representation of the object"""
+        return {
+                "id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y
+                }
 
     def __str__(self):
         """Returns human readable object class"""
