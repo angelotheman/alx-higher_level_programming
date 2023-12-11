@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Module - 1
+Module - Base Class
 
 - Base of all classes
-- private instance: __nb_objects
+- private class instance: __nb_objects
 """
 
 
@@ -19,3 +19,11 @@ class Base:
         else:
             type(self).__nb_objects += 1
             self.id = type(self).__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Returns JSON string representation of the argument"""
+        if list_dictionaries is None:
+            return "[]"
+
+        return json.dumps(list_dictionaries)
