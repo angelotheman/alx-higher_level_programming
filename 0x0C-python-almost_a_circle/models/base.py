@@ -49,7 +49,7 @@ class Base:
             data = "[]"
         else:
             data = cls.to_json_string([obj.to_dictionary()
-                for obj in list_objs])
+                                      for obj in list_objs])
 
         filename = cls.__name__ + "json"
 
