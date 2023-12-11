@@ -5,7 +5,9 @@ Module - Square class
 - Constructor: size, x, y, id
 - __str__: Returns a stringified class
 - Getters and setters for all inheriting from the Rectangle
-- Update methods with little tweak
+- Public methods
+    - Update methods with little tweak
+    - Dictionary methods
 """
 
 
@@ -59,3 +61,12 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns dictionary representation of the square"""
+        return {
+                "id": self.id,
+                "size": self.size,
+                "x": self.x,
+                "y": self.y
+                }
