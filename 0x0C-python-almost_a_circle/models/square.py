@@ -5,6 +5,7 @@ Module - Square class
 - Constructor: size, x, y, id
 - __str__: Returns a stringified class
 - Getters and setters for all inheriting from the Rectangle
+- Update methods with little tweak
 """
 
 
@@ -47,3 +48,14 @@ class Square(Rectangle):
 
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Assigns attributes using *args and **kwargs for Square"""
+        if args:
+            attributes = ["id", "size", "x", "y"]
+
+            for attribute, value in zip(attributes, args):
+                setattr(self, attribute, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
