@@ -9,7 +9,7 @@ Module - Square class
     - Update methods with little tweak
     - Dictionary methods
 """
-Rectangle = __import__("Rectangle").Rectangle
+Rectangle = __import__("models.rectangle").Rectangle
 
 
 class Square(Rectangle):
