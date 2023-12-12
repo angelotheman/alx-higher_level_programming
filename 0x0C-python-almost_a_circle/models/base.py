@@ -52,7 +52,7 @@ class Base:
             data = cls.to_json_string([obj.to_dictionary()
                                       for obj in list_objs])
 
-        filename = cls.__name__ + "json"
+        filename = cls.__name__ + ".json"
 
         with open(filename, "w", encoding="UTF-8") as textfile:
             textfile.write(data)
@@ -74,7 +74,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Loads instance from class"""
-        filename = cls.__name__ + "json"
+        filename = cls.__name__ + ".json"
 
         try:
             with open(filename, "r", encoding="UTF-8") as textfile:
@@ -88,3 +88,14 @@ class Base:
         json_list = json.loads(json_string)
         instances = [cls.create(**data) for data in json_list]
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves JSON to CSV"""
+        pass
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads JSON from CSV"""
+        pass
+
