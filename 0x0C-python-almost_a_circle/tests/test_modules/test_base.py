@@ -4,6 +4,8 @@ This is a test case file
 """
 import unittest
 from models.base import Base
+from models.base import Rectangle
+from models.base import Square
 
 
 class TestBase(unittest.TestCase):
