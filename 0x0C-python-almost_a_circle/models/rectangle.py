@@ -37,7 +37,7 @@ class Rectangle(Base):
             y (int, optional): y-coordinate of the rectangle's position
             id (int, optional): Identifier of the rectangle
         """
-        super().__init__()
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
