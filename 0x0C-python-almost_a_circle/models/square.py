@@ -32,7 +32,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """String method to represent the class"""
-        return f"[Square] ({self.id}) {self.__x}/{self.__y} - {self.__size}"
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                 self.y, self.width)
 
     @property
     def size(self):
@@ -42,11 +43,6 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Assigns with and height to the same value"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-
         self.width = value
         self.height = value
 
