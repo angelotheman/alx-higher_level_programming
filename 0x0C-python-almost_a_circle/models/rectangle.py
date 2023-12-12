@@ -12,7 +12,7 @@
     - def to_dictionary(self): Returns the dictionary represenation
 - __str__ method to display string version of class
 """
-Base = __import__("Base").Base
+Base = __import__("models.base").Base
 
 
 class Rectangle(Base):
