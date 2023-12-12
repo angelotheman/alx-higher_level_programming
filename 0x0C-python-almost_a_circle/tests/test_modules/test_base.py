@@ -17,9 +17,13 @@ class TestBase(unittest.TestCase):
         b2 = Base()
         self.assertEqual(b2.id, 2)
 
+    def test_id_with_argument(self):
+        """Tests with argument"""
         b3 = Base(12)
         self.assertEqual(b3.id, 12)
 
+    def test_id_after_argument(self):
+        """Tests after argument"""
         b4 = Base()
         self.assertEqual(b4.id, 3)
 
