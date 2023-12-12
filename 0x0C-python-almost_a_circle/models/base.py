@@ -13,6 +13,7 @@ Module - Base Class
     - def load_from_file(cls)
 """
 import json
+import csv
 
 
 class Base:
@@ -92,10 +93,44 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Saves JSON to CSV"""
-        pass
+        filename = cls.__name__ + ".csv"
+        
+        with open(filename, "w", newline="") as csv_file:
+            csv_writer = csv.writer(csv_file)
+
+            if list_objs is not None or list_objs == []:
+                csv_file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    attributes = ["id", "width", "height", "x", "y"]
+                else:
+                    attributes = ["id", "size", "x", "y"]
+
+                writer = csv.DicWriter(csv_file, fieldnames=attributes)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
         """Loads JSON from CSV"""
-        pass
+        filename = cls.__name__ + ".csv"
+        instances = []
 
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                csv_reader = csv.reader(csvfile)
+                for row in csv_reader:
+                    row = [int(value) for value in row]
+                    if cls.__name__ = "Rectangle":
+                        instances.append(cls.create(id=row[0],
+                                                    width=row[1],
+                                                    height=row[2],
+                                                    x=row[3], y=row[4]))
+                    elif cls.__name__ = "Sqaure":
+                        instances.append(cls.create(id=row[0],
+                                                    size=row[1],
+                                                    x=row[2], y=row[3]))
+        except FileNotFoundError:
+            pass
+
+        return instances
