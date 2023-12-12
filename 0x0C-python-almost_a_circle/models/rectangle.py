@@ -11,8 +11,10 @@
     - def update(self, *args): Assigns argument to each attribute
     - def to_dictionary(self): Returns the dictionary represenation
 - __str__ method to display string version of class
-"""
+
 Base = __import__("models.base").Base
+"""
+from models.base import Base
 
 
 class Rectangle(Base):
