@@ -45,6 +45,13 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(4, 5, "invalid", 2)
 
+    def test_setter_with_non_integer_values(self):
+        """Checks setter methods for non integer values"""
+        r = Rectangle(3, 4)
+
+        with self.assertRaises(TypeError):
+            r.width = "invalid"
+
 
 if __name__ == '__main__':
     unittest.main()
