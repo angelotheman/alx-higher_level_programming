@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """
-- Module inherits from Base
-- Private instance attributes: width, height, x, y
-- Getter/Setter for each
-- Initialization for each
-- Checks for validation of all attributes
-- Public instance:
-    - def Area(self): Area of rectangle
-    - def display(self): Display area as # with x and y offsets
-    - def update(self, *args): Assigns argument to each attribute
-    - def to_dictionary(self): Returns the dictionary represenation
-- __str__ method to display string version of class
+Module inherits from Base
+Private instance attributes: width, height, x, y
+Getter/Setter for each
+Initialization for each
+Checks for validation of all attributes
+Public instance:
+    def Area(self): Area of rectangle
+    def display(self): Display area as # with x and y offsets
+    def update(self, *args): Assigns argument to each attribute
+    def to_dictionary(self): Returns the dictionary represenation
+__str__ method to display string version of class
 """
 from models.base import Base
 
@@ -19,10 +19,10 @@ class Rectangle(Base):
     """Rectangle inherits from the Base class
 
     Private instance attributes:
-    - __width: Width of the rectangle
-    - __height: Height of the rectangle
-    - __x: x-coordinate of the rectangle's position
-    - __y: y-coordinate of the rectangle's position
+      __width: Width of the rectangle
+      __height: Height of the rectangle
+      __x: x-coordinate of the rectangle's position
+      __y: y-coordinate of the rectangle's position
 
     Each attribute has it's own getter and setter method
     """
