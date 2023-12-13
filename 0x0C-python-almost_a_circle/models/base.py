@@ -117,19 +117,12 @@ class Base:
         instances = []
 
         try:
-            with open(filename, "r", newline="") as csvfile:
-                csv_reader = csv.reader(csvfile)
-                for row in csv_reader:
-                    row = [int(value) for value in row]
-                    if cls.__name__ == "Rectangle":
-                        instances.append(cls.create(id=row[0],
-                                                    width=row[1],
-                                                    height=row[2],
-                                                    x=row[3], y=row[4]))
-                    elif cls.__name__ == "Sqaure":
-                        instances.append(cls.create(id=row[0],
-                                                    size=row[1],
-                                                    x=row[2], y=row[3]))
+            with open(filename, "r") as textfile:
+                json_string = textfile.read()
+                instance_dicts = cls.from_json_string(json_string)
+
+                for instance_dict in instance_dicts:
+                    instances.append(cls.create(**instance_dict))
         except FileNotFoundError:
             pass
 
