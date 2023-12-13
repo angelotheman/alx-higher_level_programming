@@ -30,21 +30,16 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """String method to represent the class"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
-                                                 self.y, self.width)
-
     @property
     def size(self):
         """Getter for the size attribute"""
         return self.width
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """Assigns with and height to the same value"""
-        self.width = value
-        self.height = value
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """Assigns attributes using *args and **kwargs for Square"""
@@ -65,3 +60,10 @@ class Square(Rectangle):
                 "x": self.x,
                 "y": self.y
                 }
+
+    def __str__(self):
+        """String method to represent the class"""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                 self.y, self.width)
+
+
