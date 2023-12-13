@@ -65,5 +65,3 @@ class Square(Rectangle):
         """String method to represent the class"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
-
-
