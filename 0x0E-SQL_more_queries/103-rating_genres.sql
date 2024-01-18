@@ -1,4 +1,4 @@
--- List all genres by their rating
+-- Do a List of all genres by their rating
 
 SELECT tg.name, SUM(tsr.rate) AS `rating`
 	FROM tv_genres tg
