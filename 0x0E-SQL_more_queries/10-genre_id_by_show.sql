@@ -1,6 +1,6 @@
 -- List all shows in the database
 
-SELECT ts.title, tsh.genre_id
-	FROM tv_shows ts, tv_shows_genres tsh
-WHERE tsh.show_id = ts.id
-ORDER BY ts.title, tsh.genre_id;
+SELECT ts.title, tsg.genre_id
+	FROM tv_shows ts, tv_shows_genres tsg
+WHERE tsg.show_id = ts.id
+ORDER BY ts.title ASC, tsg.genre_id ASC;
