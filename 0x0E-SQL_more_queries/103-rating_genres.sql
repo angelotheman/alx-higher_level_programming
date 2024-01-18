@@ -6,5 +6,5 @@ SELECT tg.name, SUM(tsr.rate) AS `rating`
 			ON tg.id = tsg.genre_id
 		JOIN tv_show_ratings tsr
 			ON tsg.show_id = tsr.show_id
-	GROUP BY `tg.name`
+	GROUP BY tg.name
 	ORDER BY `rating` DESC;
