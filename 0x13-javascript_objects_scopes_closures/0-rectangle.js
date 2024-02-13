@@ -2,4 +2,4 @@
 
 const Rectangle = class {};
 
-module.exports = { Rectangle };
+module.exports = Rectangle;
