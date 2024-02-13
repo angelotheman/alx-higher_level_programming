@@ -8,11 +8,12 @@ const Rectangle = class {
     }
   }
 
-  print() {
+  print () {
     while (this.height > 0) {
       console.log('X'.repeat(this.width));
-      h--;
+      this.height--;
     }
+  }
 };
 
 module.exports = Rectangle;
