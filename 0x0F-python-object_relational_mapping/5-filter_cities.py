@@ -16,11 +16,11 @@ if __name__ == '__main__':
     FROM cities
     JOIN states
         ON cities.state_id = states.id
-    WHERE states.name = {}
+    WHERE states.name = %s
     ORDER BY cities.id
-    """.format(argv[4])
+    """
 
-    cursor.execute(query)
+    cursor.execute(query, (argv[4],))
 
     result = cursor.fetchall()
 
