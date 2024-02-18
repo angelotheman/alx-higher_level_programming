@@ -17,13 +17,13 @@ def select_states(username, password, database):
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%'"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
     cursor.execute(query)
 
     result = cursor.fetchall()
 
     for state in result:
-        print("({}, '{}')".format(state[0], state[1]))
+        print(state)
 
     db.close()
 
