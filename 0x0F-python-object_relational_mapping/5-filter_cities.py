@@ -24,5 +24,5 @@ if __name__ == '__main__':
 
     result = cursor.fetchall()
 
-    for state in result:
-        print(state)
+    cities = ', '.join(city[0] for city in result)
+    print(cities)
