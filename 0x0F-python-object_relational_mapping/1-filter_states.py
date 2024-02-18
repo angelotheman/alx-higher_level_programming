@@ -2,8 +2,8 @@
 """
 Module to list all states
 """
-import sys
 import MySQLdb
+from sys import argv
 
 
 def select_states(username, password, database):
@@ -23,11 +23,11 @@ def select_states(username, password, database):
     result = cursor.fetchall()
 
     for state in result:
-        print(state)
+        print("({}, '{}')".format(state[0], state[1]))
 
     db.close()
 
 
 if __name__ == '__main__':
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+    username, password, database = argv[1], argv[2], argv[3]
     select_states(username, password, database)
