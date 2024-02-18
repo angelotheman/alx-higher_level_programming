@@ -25,7 +25,6 @@ def select_states(username, password, database):
     for state in result:
         print(state)
 
-    cursor.close()
     db.close()
 
 
