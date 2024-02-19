@@ -21,3 +21,4 @@ if __name__ == '__main__':
 
     if query:
         query.name = 'New Mexico'
+        session.commit()
