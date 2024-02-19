@@ -3,7 +3,8 @@
 Module for the state table class
 This is ORM
 """
-from sqlalchemy import Column, Integer
+
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 
@@ -12,7 +13,7 @@ Base = declarative_base()
 
 class State(Base):
     """
-    Class for the table 'State'
+    Represents a state for a MySQL database
     """
     __tablename__ = 'states'
 
