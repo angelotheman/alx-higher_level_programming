@@ -17,4 +17,5 @@ if __name__ == "__main__":
     session = Session()
 
     for city in session.query(City).order_by(City.id):
-        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+        state_name = city.state.name if city.state else "N/A"
+        print("{}: {} -> {}".format(city.id, city.name, state_name))
