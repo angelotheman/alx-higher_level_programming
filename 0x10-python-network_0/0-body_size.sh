@@ -1,3 +1,3 @@
 #!/bin/bash
 # Displaying the results of GET method
-curl "$1"
+curl -sI "$1" | grep -i 'Content-Length' | awk '{print $2}'
