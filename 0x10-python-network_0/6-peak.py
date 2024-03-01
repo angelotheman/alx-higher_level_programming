@@ -3,6 +3,7 @@
 Defines a peak-finding algorithm
 """
 
+
 def find_peak(list_of_integers):
     """
     Finds the highest number in a list of integers
