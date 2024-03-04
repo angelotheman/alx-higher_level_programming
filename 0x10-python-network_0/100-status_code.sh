@@ -1,3 +1,3 @@
 #!/bin/bash
 # POST method using curl
-curl -sw "%{http_code}" -I "$1"
+curl -so /dev/null -w "%{http_code}" "$1"
