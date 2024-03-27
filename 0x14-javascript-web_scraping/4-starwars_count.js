@@ -1,7 +1,7 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 const request = require('request');
-const apiUrl =  process.argv[2];
+const apiUrl = process.argv[2];
 const characterId = '18';
 
 request(apiUrl, (error, response, body) => {
@@ -13,9 +13,9 @@ request(apiUrl, (error, response, body) => {
   const data = JSON.parse(body);
   let count = 0;
 
-  for (let film of data.results) {
+  for (const film of data.results) {
     if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-        count++;
+      count++;
     }
   }
 
