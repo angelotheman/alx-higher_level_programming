@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiUrl =  process.argv[2];
+const apiUrl = process.argv[2];
 
 request(apiUrl, (error, response, body) => {
   if (error) {
@@ -14,11 +14,11 @@ request(apiUrl, (error, response, body) => {
 
   todos.forEach(todo => {
     if (todo.completed) {
-        if (completedTasks[todo.userId]) {
-            completedTasks[todo.userId]++;
-        } else {
-            completedTasks[todo.userId] = 1;
-        }
+      if (completedTasks[todo.userId]) {
+        completedTasks[todo.userId]++;
+      } else {
+        completedTasks[todo.userId] = 1;
+      }
     }
   });
   console.log(completedTasks);
