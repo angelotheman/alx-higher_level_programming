@@ -26,4 +26,18 @@ request(apiUrl, (error, response, body) => {
 			console.log(characterData.name);
 		});
 	});
+  const characterUrls = filmData.characters;
+
+  characterUrls.forEach(characterUrl => {
+    request(characterUrl, (error, response, body) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      const characterData = JSON.parse(body);
+
+      console.log(characterData.name);
+    });
+  });
 });
